@@ -10,6 +10,7 @@ const portfolioProjects = [
     tech: "Kotlin, Firebase, Room local DB",
     image: "/chickens.png",
     alt: "poultry farmer",
+    buttonText: "View App ->",
   },
   {
     title: "Handiman",
@@ -20,6 +21,7 @@ const portfolioProjects = [
     image:
       "https://images.unsplash.com/photo-1681351622977-a8c4bccae50b?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     alt: "car service project",
+    buttonText: "View App ->",
   },
   {
     title: "Ajuma AI",
@@ -30,6 +32,7 @@ const portfolioProjects = [
     image:
       "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=455&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     alt: "AI job application project",
+    buttonText: "View App ->",
   },
   {
     title: "Adinkra Memory Game",
@@ -40,6 +43,7 @@ const portfolioProjects = [
     image:
       "/adinkra-game.jpg",
     alt: "cultural game project",
+    buttonText: "View App ->",
   },
   {
     title: "Poultry Calculator",
@@ -49,6 +53,7 @@ const portfolioProjects = [
     tech: "Vanilla JS, Firebase Hosting, PWA",
     image: "/chicks.jpg",
     alt: "farmer using poultry planning tool",
+    buttonText: "View App ->",
   },
   {
     title: "Chicken Disease Detection",
@@ -59,6 +64,7 @@ const portfolioProjects = [
     image:
       "https://plus.unsplash.com/premium_photo-1688678097473-2ce11d23e30c?q=80&w=670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     alt: "poultry disease detection project",
+    buttonText: "View App ->",
   },
   {
     title: "Plant / Medicinal App",
@@ -68,6 +74,7 @@ const portfolioProjects = [
     tech: "React, JavaScript, Trefle API",
     image: "https://images.unsplash.com/photo-1739338333695-3f96926654f2?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     alt: "plant knowledge app",
+    buttonText: "View App ->",
   },
   {
     title: "Husk & Hive",
@@ -77,6 +84,7 @@ const portfolioProjects = [
     tech: "Website, branding, Firebase Hosting",
     image: "/husk-honey.jpeg",
     alt: "natural food brand project",
+    buttonText: "View Page ->",
   },
   {
     title: "AkuafoAdamfo",
@@ -86,6 +94,7 @@ const portfolioProjects = [
     tech: "Weather intelligence, crop recommendations, rainfall analysis",
     image: "/weather-app2.webp",
     alt: "weather intelligence farming project",
+    buttonText: "View App ->",
   },
 ];
 
@@ -185,7 +194,7 @@ export default function Home() {
                 <p>{project.description}</p>
                 <p className="project-tech">{project.tech}</p>
               </div>
-              <button className="btn">Case Study &gt;</button>
+              <button className="btn">{project.buttonText}</button>
             </div>
           ))}
         </div>
