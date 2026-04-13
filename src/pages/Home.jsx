@@ -104,12 +104,11 @@ export default function Home() {
           <div className="process-ini">
             <h4>Work Process</h4>
             <p className="para-1">
-              I'm a Full-Stack Developer and UI/UX Designer with a strong foundation in HTML,
-              CSS, and JavaScript. Most of my interface designs are crafted to be responsive
-              and intuitive with obvious benefits of being aesthetic and functional.
+              We are a full-stack development and UI/UX design team dedicated to building smart digital solutions for real-world problems.
+              From agriculture to business tools, we create responsive, intuitive, and visually engaging products that are both functional and impactful.
             </p>
             <p className="para-2">
-              What sets me apart is my strategic use of AI tools to accelerate and enhance
+              What sets us apart is our strategic use of AI tools to accelerate and enhance
               every stage of the development process, from rapid prototyping and code
               generation to content optimization and UI testing.
             </p>
@@ -161,8 +160,8 @@ export default function Home() {
         <div className="port-text">
           <h4>Portfolio</h4>
           <p>
-            This is where my background mixes web design <br />
-            and android app development to produce functional and creative projects.
+            This is where our work across web design, Android app development,
+            AI tools, and agritech comes together into functional and creative projects.
           </p>
         </div>
 

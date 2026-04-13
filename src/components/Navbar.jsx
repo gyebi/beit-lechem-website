@@ -9,7 +9,7 @@ export default function Navbar() {
           document.getElementById("home").scrollIntoView({ behavior: "smooth" });
         }}
       >
-        Beit Lechem Tech
+        <img src="/icons/Beit Lechem Tech logo design.png" alt="Beit Lechem Tech" />
       </div>
 
       <ul className="nav-links">
