@@ -1,0 +1,76 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  background: url("/farmer_fast.webp") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  padding: 0 5%;
+  color: white;
+}
+
+/* Dark overlay */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Content */
+.hero-content {
+  position: relative;
+  max-width: 600px;
+  z-index: 2;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  color: #FFFFFF;
+}
+
+/* Button */
+.hero-btn {
+  padding: 12px 24px;
+  border: none;
+  background: white;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.hero-btn:hover {
+  background: #ddd;
+}
+
+.home-page {
+  min-height: 100vh;
+  background: #fff;
+  color: #08060d;
+}
+
+.home-section {
+  min-height: 100vh;
+  padding: 120px 5% 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.home-section:nth-child(even) {
+  background: #f6f8f7;
+}
+
+.home-section h1,
+.home-section h2 {
+  margin: 0 0 20px;
+  color: #08060d;
+}
+
+.home-section p {
+  max-width: 640px;
+  color: #4d5660;
+}
