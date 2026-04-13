@@ -26,11 +26,21 @@ export default function Navbar() {
         <li
           onClick={() =>
             document
-              .getElementById("apps")
+              .getElementById("process")
               .scrollIntoView({ behavior: "smooth" })
           }
         >
-          Apps
+          Process
+        </li>
+
+        <li
+          onClick={() =>
+            document
+              .getElementById("portfolio")
+              .scrollIntoView({ behavior: "smooth" })
+          }
+        >
+          Portfolio
         </li>
 
         <li

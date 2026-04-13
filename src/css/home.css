@@ -52,12 +52,24 @@
 
 .home-section {
   min-height: 100vh;
-  padding: 120px 5% 60px;
+  padding: 120px clamp(20px, 5vw, 72px) 60px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   text-align: left;
+  box-sizing: border-box;
+}
+
+.home-section > h1,
+.home-section > h2,
+.home-section > p,
+.home-section > .process-row,
+.home-section > .port-text,
+.home-section > .cards-contain {
+  width: 100%;
+  max-width: 1320px;
+  box-sizing: border-box;
 }
 
 .home-section:nth-child(even) {
@@ -73,4 +85,276 @@
 .home-section p {
   max-width: 640px;
   color: #4d5660;
+}
+
+.portfolio {
+  background: #f3f4f6;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 80px;
+}
+
+.port-text {
+  width: 100%;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.port-text h4 {
+  margin: 0 0 14px;
+  font-size: 3rem;
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: 4px;
+  color: #08060d;
+}
+
+.port-text p {
+  max-width: 760px;
+  margin: 0 auto;
+  font-size: 1rem;
+  line-height: 1.45;
+  color: #08060d;
+}
+
+.cards-contain {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+}
+
+.card-porto-1 {
+  min-height: 560px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: none;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card-porto-1:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 22px 42px rgba(0, 0, 0, 0.14);
+}
+
+.card-porto-1 img {
+  width: 100%;
+  height: 260px;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.card-porto-1:hover img {
+  transform: scale(1.04);
+}
+
+.text-box-1 {
+  flex: 1;
+  padding: 30px 28px 12px;
+}
+
+.text-box-1 h4 {
+  margin: 8px 0 14px;
+  font-size: 1.2rem;
+  line-height: 1.25;
+  font-weight: 800;
+  color: #08060d;
+}
+
+.text-box-1 p {
+  margin: 0;
+  font-size: 0.86rem;
+  line-height: 1.35;
+  color: #57586a;
+}
+
+.project-type {
+  display: inline-flex;
+  margin-bottom: 4px;
+  color: #a844ff;
+  font-size: 0.76rem;
+  font-weight: 800;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.project-tech {
+  margin-top: 14px !important;
+  color: #08060d !important;
+  font-size: 0.78rem !important;
+  font-weight: 700;
+}
+
+.btn {
+  width: fit-content;
+  margin: 10px 28px 64px;
+  padding: 16px 30px;
+  border: 3px solid #a844ff;
+  border-radius: 6px;
+  background: transparent;
+  color: #34323b;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.btn:hover {
+  background: #a844ff;
+  color: #ffffff;
+  transform: translateY(-3px);
+}
+
+/* ===== General section styling ===== */
+.process {
+  display: flex;
+  background-color: #f0f1f3;
+  width: 100%;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.process-row {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.process-ini {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+}
+
+.process-ini > h4 {
+  font-size: 2.5em;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  color: #08060d;
+}
+
+p.para-1 {
+  font-size: 0.8em;
+  margin-bottom: 20px;
+}
+
+p.para-2 {
+  font-size: 0.8em;
+  margin-bottom: 20px;
+}
+
+/* ===== Grid container ===== */
+.actual-grid {
+  width: 100%;
+  background: linear-gradient(to left, #F2D2FB, #EFF9F6);
+  padding: 18px;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 18px;
+  justify-items: stretch;
+  align-items: stretch;
+}
+
+/* === Each card === */
+.process-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 22px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  min-height: 220px;
+  cursor: pointer;
+  outline: none;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.process-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.08);
+}
+
+.icon-box {
+  width: 42px;
+  height: 42px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  background: #0e7c66;
+  color: #fff;
+  font-weight: 700;
+}
+
+.process-card h4 {
+  margin: 0 0 10px;
+  font-size: 1.05rem;
+  line-height: 1.25;
+  color: #08060d;
+}
+
+.process-card p {
+  font-size: 0.82rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 1100px) {
+  .cards-contain {
+    gap: 14px;
+  }
+
+  .card-porto-1 img {
+    height: 220px;
+  }
+}
+
+@media (max-width: 820px) {
+  .cards-contain {
+    grid-template-columns: 1fr;
+  }
+
+  .port-text h4 {
+    font-size: 2.4rem;
+  }
+
+  .card-porto-1 {
+    min-height: auto;
+  }
+
+  .btn {
+    margin-bottom: 28px;
+  }
+
+  .process-row {
+    flex-direction: column;
+  }
+
+  .process-ini {
+    width: 100%;
+    margin-top: 40px;
+  }
+
+  .actual-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .process-card {
+    min-height: auto;
+  }
 }
