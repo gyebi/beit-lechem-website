@@ -6,6 +6,12 @@ export default function Landing({ onExplore }) {
       <div className="overlay"></div>
 
       <div className="hero-content">
+        <img
+          className="landing-logo"
+          src="/icons/Beit Lechem Tech logo design.png"
+          alt="Beit Lechem Tech"
+        />
+
         <h1>
           Building smart solutions for farmers, businesses,
           and Africa's future.

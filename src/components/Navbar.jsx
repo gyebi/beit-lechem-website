@@ -63,8 +63,6 @@ export default function Navbar() {
           Contact
         </li>
       </ul>
-
-      <button className="nav-btn">Get Started</button>
     </nav>
   );
 }

@@ -8,7 +8,7 @@ const portfolioProjects = [
     description:
       "Tracks egg production, monitors flock health, and gives farmers useful flock analytics.",
     tech: "Kotlin, Firebase, Room local DB",
-    image: "/lady-farmer.jpg",
+    image: "/chickens.png",
     alt: "poultry farmer",
   },
   {
@@ -38,7 +38,7 @@ const portfolioProjects = [
       "A memory game using African symbols, with a leaderboard system and weekly competitions.",
     tech: "React, JavaScript, Firebase Hosting, Firestore, PWA, Android TWA",
     image:
-      "https://images.unsplash.com/photo-1739338333695-3f96926654f2?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "/adinkra-game.jpg",
     alt: "cultural game project",
   },
   {
@@ -47,7 +47,7 @@ const portfolioProjects = [
     description:
       "Calculates feed requirements, estimates profit and loss, and helps farmers plan production.",
     tech: "Vanilla JS, Firebase Hosting, PWA",
-    image: "/farmer_fast.webp",
+    image: "/chicks.jpg",
     alt: "farmer using poultry planning tool",
   },
   {
@@ -66,7 +66,7 @@ const portfolioProjects = [
     description:
       "Searches plants and displays plant information through an external plant knowledge API.",
     tech: "React, JavaScript, Trefle API",
-    image: "/young-farmer.avif",
+    image: "https://images.unsplash.com/photo-1739338333695-3f96926654f2?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     alt: "plant knowledge app",
   },
   {
@@ -75,7 +75,7 @@ const portfolioProjects = [
     description:
       "Honey and natural food brand direction focused on marketing, storytelling, and a hosted website.",
     tech: "Website, branding, Firebase Hosting",
-    image: "/men-drying-cocoa.jpg",
+    image: "/husk-honey.jpeg",
     alt: "natural food brand project",
   },
   {
@@ -84,7 +84,7 @@ const portfolioProjects = [
     description:
       "Concept for weather-based farming decisions, crop recommendations, and rainfall analysis.",
     tech: "Weather intelligence, crop recommendations, rainfall analysis",
-    image: "/nr-region.jpg",
+    image: "/weather-app2.webp",
     alt: "weather intelligence farming project",
   },
 ];
@@ -97,6 +97,16 @@ export default function Home() {
       <section id="home" className="home-section">
         <h1>Welcome to Beit Lechem Tech</h1>
         <p>Empowering farmers, businesses, and Africa's future with smart solutions.</p>
+        <button
+          className="home-cta"
+          onClick={() =>
+            document
+              .getElementById("portfolio")
+              .scrollIntoView({ behavior: "smooth" })
+          }
+        >
+          Get Started
+        </button>
       </section>
 
       <section id="process" className="home-section process">
