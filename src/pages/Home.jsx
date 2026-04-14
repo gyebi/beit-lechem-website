@@ -1,4 +1,5 @@
 import "../css/home.css";
+import ContactForm from "../components/ContactForm";
 import Navbar from "../components/Navbar";
 
 const whatsappMessage = encodeURIComponent(
@@ -281,45 +282,7 @@ export default function Home() {
             </p>
           </div>
 
-          <form className="contact-form" onSubmit={(event) => event.preventDefault()}>
-            <div className="form-row">
-              <label>
-                Name
-                <input type="text" name="name" placeholder="Your name" required />
-              </label>
-              <label>
-                Email
-                <input type="email" name="email" placeholder="you@example.com" required />
-              </label>
-            </div>
-
-            <label>
-              Project type
-              <select name="projectType" defaultValue="" required>
-                <option value="" disabled>
-                  Select a service
-                </option>
-                <option value="full-stack-development">Full-stack development</option>
-                <option value="ui-ux-design">UI/UX design</option>
-                <option value="agritech">Agritech solution</option>
-                <option value="business-operations">Business operations</option>
-              </select>
-            </label>
-
-            <label>
-              Message
-              <textarea
-                name="message"
-                rows="5"
-                placeholder="Share a few details about your idea or challenge"
-                required
-              ></textarea>
-            </label>
-
-            <button className="contact-submit" type="submit">
-              Send Message
-            </button>
-          </form>
+          <ContactForm />
         </div>
       </section>
 
