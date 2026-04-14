@@ -11,6 +11,7 @@ const portfolioProjects = [
     image: "/chickens.png",
     alt: "poultry farmer",
     buttonText: "View App ->",
+    href: "https://play.google.com/apps/test/com.birdfeathers.birdfeathers/1",
   },
   {
     title: "Handiman",
@@ -22,6 +23,7 @@ const portfolioProjects = [
       "https://images.unsplash.com/photo-1681351622977-a8c4bccae50b?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     alt: "car service project",
     buttonText: "View App ->",
+    href: "https://handiman-web.web.app",
   },
   {
     title: "Ajuma AI",
@@ -32,7 +34,8 @@ const portfolioProjects = [
     image:
       "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=455&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     alt: "AI job application project",
-    buttonText: "View App ->",
+    buttonText: "View Code ->",
+    href: "https://github.com/gyebi/ajuma",
   },
   {
     title: "Adinkra Memory Game",
@@ -44,6 +47,7 @@ const portfolioProjects = [
       "/adinkra-game.jpg",
     alt: "cultural game project",
     buttonText: "View App ->",
+    href: "https://adinkra-memory-game.web.app",
   },
   {
     title: "Poultry Calculator",
@@ -54,6 +58,7 @@ const portfolioProjects = [
     image: "/chicks.jpg",
     alt: "farmer using poultry planning tool",
     buttonText: "View App ->",
+    href: "https://birdfeathers-ai.web.app",
   },
   {
     title: "Chicken Disease Detection",
@@ -74,7 +79,8 @@ const portfolioProjects = [
     tech: "React, JavaScript, Trefle API",
     image: "https://images.unsplash.com/photo-1739338333695-3f96926654f2?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     alt: "plant knowledge app",
-    buttonText: "View App ->",
+    buttonText: "View Code ->",
+    href: "https://github.com/gyebi/plant-app",
   },
   {
     title: "Husk & Hive",
@@ -85,6 +91,7 @@ const portfolioProjects = [
     image: "/husk-honey.jpeg",
     alt: "natural food brand project",
     buttonText: "View Page ->",
+    href: "https://huskandhoney-websi.web.app",
   },
   {
     title: "AkuafoAdamfo",
@@ -94,7 +101,8 @@ const portfolioProjects = [
     tech: "Weather intelligence, crop recommendations, rainfall analysis",
     image: "/weather-app2.webp",
     alt: "weather intelligence farming project",
-    buttonText: "View App ->",
+    buttonText: "View Code ->",
+    href: "https://github.com/gyebi/akuafoadamfo",
   },
 ];
 
@@ -194,7 +202,13 @@ export default function Home() {
                 <p>{project.description}</p>
                 <p className="project-tech">{project.tech}</p>
               </div>
-              <button className="btn">{project.buttonText}</button>
+              {project.href ? (
+                <a className="btn" href={project.href} target="_blank" rel="noreferrer">
+                  {project.buttonText}
+                </a>
+              ) : (
+                <button className="btn">{project.buttonText}</button>
+              )}
             </div>
           ))}
         </div>
