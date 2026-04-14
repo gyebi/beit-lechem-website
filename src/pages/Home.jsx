@@ -1,6 +1,10 @@
 import "../css/home.css";
 import Navbar from "../components/Navbar";
 
+const whatsappMessage = encodeURIComponent(
+  "Hello Beit Lechem Tech, I would like to discuss a project."
+);
+
 const portfolioProjects = [
   {
     title: "BirdFeathers",
@@ -112,18 +116,43 @@ export default function Home() {
       <Navbar />
 
       <section id="home" className="home-section">
-        <h1>Welcome to Beit Lechem Tech</h1>
-        <p>Empowering farmers, businesses, and Africa's future with smart solutions.</p>
-        <button
-          className="home-cta"
-          onClick={() =>
-            document
-              .getElementById("portfolio")
-              .scrollIntoView({ behavior: "smooth" })
-          }
-        >
-          Get Started
-        </button>
+        <div className="home-hero">
+          <div className="home-copy">
+            <h1>Welcome to Beit Lechem Tech</h1>
+            <p>Empowering farmers, businesses, and Africa's future with smart solutions.</p>
+            <button
+              className="home-cta"
+              onClick={() =>
+                document
+                  .getElementById("portfolio")
+                  .scrollIntoView({ behavior: "smooth" })
+              }
+            >
+              Get Started
+            </button>
+          </div>
+
+          <div className="home-image-stack" aria-label="Agriculture and technology work">
+            <img
+              className="home-stack-image image-one"
+              src="/layers-feeding.jpeg"
+              alt="poultry birds feeding"
+              tabIndex="0"
+            />
+            <img
+              className="home-stack-image image-two"
+              src="/lady-farmer.jpg"
+              alt="farmer holding produce"
+              tabIndex="0"
+            />
+            <img
+              className="home-stack-image image-three"
+              src="/men-drying-cocoa.jpg"
+              alt="farmers drying cocoa"
+              tabIndex="0"
+            />
+          </div>
+        </div>
       </section>
 
       <section id="process" className="home-section process">
@@ -215,14 +244,100 @@ export default function Home() {
       </section>
 
       <section id="about" className="home-section">
-        <h2>About</h2>
-        <p>We build technology with purpose, clarity, and local impact.</p>
+        <h2 className="section-title">About</h2>
+        <div className="about-content">
+          <div className="about-copy">
+            <p>
+              Beit Lechem Tech is a technology company focused on developing
+              scalable digital solutions across agriculture, services, and
+              business operations.
+            </p>
+            <p>
+              We specialize in full-stack development and UI/UX design, delivering
+              products that are both efficient and user-centered.
+            </p>
+            <p>
+              Our goal is to bridge the gap between technology and real-world
+              application.
+            </p>
+          </div>
+          <img
+            className="about-image"
+            src="/tractor-farm.webp"
+            alt="tractor working on a farm"
+          />
+        </div>
       </section>
 
       <section id="contact" className="home-section">
-        <h2>Contact</h2>
-        <p>Let's create something useful together.</p>
+        <h2 className="section-title">Contact</h2>
+        <div className="contact-content">
+          <div className="contact-intro">
+            <span className="contact-eyebrow">Start a project</span>
+            <h3>Let's create something useful together.</h3>
+            <p>
+              Tell us what you are building, where you need support, and how we
+              can reach you.
+            </p>
+          </div>
+
+          <form className="contact-form" onSubmit={(event) => event.preventDefault()}>
+            <div className="form-row">
+              <label>
+                Name
+                <input type="text" name="name" placeholder="Your name" required />
+              </label>
+              <label>
+                Email
+                <input type="email" name="email" placeholder="you@example.com" required />
+              </label>
+            </div>
+
+            <label>
+              Project type
+              <select name="projectType" defaultValue="" required>
+                <option value="" disabled>
+                  Select a service
+                </option>
+                <option value="full-stack-development">Full-stack development</option>
+                <option value="ui-ux-design">UI/UX design</option>
+                <option value="agritech">Agritech solution</option>
+                <option value="business-operations">Business operations</option>
+              </select>
+            </label>
+
+            <label>
+              Message
+              <textarea
+                name="message"
+                rows="5"
+                placeholder="Share a few details about your idea or challenge"
+                required
+              ></textarea>
+            </label>
+
+            <button className="contact-submit" type="submit">
+              Send Message
+            </button>
+          </form>
+        </div>
       </section>
+
+      <footer className="site-footer">
+        <p>&copy; Copyright 2026, Beit Lechem Tech</p>
+      </footer>
+
+      <a
+        className="whatsapp-float"
+        href={`https://wa.me/?text=${whatsappMessage}`}
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Chat with Beit Lechem Tech on WhatsApp"
+      >
+        <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+          <path d="M16.04 4C9.41 4 4 9.38 4 16c0 2.12.56 4.18 1.62 6L4.02 28l6.15-1.57A12 12 0 0 0 16.04 28C22.67 28 28 22.62 28 16S22.67 4 16.04 4Zm0 21.8c-1.87 0-3.68-.53-5.25-1.54l-.38-.24-3.65.93.97-3.56-.25-.39A9.75 9.75 0 0 1 6.23 16c0-5.4 4.4-9.8 9.81-9.8 5.39 0 9.76 4.4 9.76 9.8s-4.37 9.8-9.76 9.8Zm5.37-7.35c-.3-.15-1.74-.86-2.01-.96-.27-.1-.47-.15-.67.15-.2.29-.77.96-.95 1.15-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.46-.88-.79-1.47-1.76-1.64-2.06-.18-.29-.02-.45.13-.6.14-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.47 1.07 2.89 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.31 1.27.49 1.7.63.71.22 1.36.19 1.87.12.57-.08 1.74-.71 1.99-1.4.25-.68.25-1.27.17-1.39-.07-.12-.27-.2-.57-.34Z" />
+        </svg>
+      </a>
     </div>
   );
 }
