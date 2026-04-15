@@ -1,32 +1,39 @@
-/**
- * Import function triggers from their respective submodules:
- *
- * const {onCall} = require("firebase-functions/v2/https");
- * const {onDocumentWritten} = require("firebase-functions/v2/firestore");
- *
- * See a full list of supported triggers at https://firebase.google.com/docs/functions
- */
-
 const {setGlobalOptions} = require("firebase-functions");
-const {onRequest} = require("firebase-functions/https");
+const {onDocumentCreated} = require("firebase-functions/v2/firestore");
 const logger = require("firebase-functions/logger");
+const {Resend} = require("resend");
 
-// For cost control, you can set the maximum number of containers that can be
-// running at the same time. This helps mitigate the impact of unexpected
-// traffic spikes by instead downgrading performance. This limit is a
-// per-function limit. You can override the limit for each function using the
-// `maxInstances` option in the function's options, e.g.
-// `onRequest({ maxInstances: 5 }, (req, res) => { ... })`.
-// NOTE: setGlobalOptions does not apply to functions using the v1 API. V1
-// functions should each use functions.runWith({ maxInstances: 10 }) instead.
-// In the v1 API, each function can only serve one request per container, so
-// this will be the maximum concurrent request count.
-setGlobalOptions({ maxInstances: 10 });
+setGlobalOptions({maxInstances: 10});
 
-// Create and deploy your first functions
-// https://firebase.google.com/docs/functions/get-started
+exports.sendContactEmail = onDocumentCreated(
+    "messages/{messageId}",
+    async (event) => {
+      const message = event.data.data();
+      const to = process.env.CONTACT_EMAIL_TO;
+      const from = process.env.CONTACT_EMAIL_FROM;
 
-// exports.helloWorld = onRequest((request, response) => {
-//   logger.info("Hello logs!", {structuredData: true});
-//   response.send("Hello from Firebase!");
-// });
+      if (!process.env.RESEND_API_KEY || !to || !from) {
+        logger.warn("Contact email env vars are not fully configured.");
+        return;
+      }
+
+      const resend = new Resend(process.env.RESEND_API_KEY);
+
+      await resend.emails.send({
+        from,
+        to,
+        subject: `New Beit Lechem Tech inquiry from ${message.name}`,
+        replyTo: message.email,
+        html: `
+          <h2>New contact form submission</h2>
+          <p><strong>Name:</strong> ${message.name}</p>
+          <p><strong>Email:</strong> ${message.email}</p>
+          <p><strong>Project type:</strong> ${message.projectType}</p>
+          <p><strong>Message:</strong></p>
+          <p>${message.message}</p>
+        `,
+      });
+
+      logger.info("Contact email sent.", {messageId: event.params.messageId});
+    },
+);
