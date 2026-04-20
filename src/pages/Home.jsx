@@ -292,7 +292,7 @@ export default function Home() {
 
       <a
         className="whatsapp-float"
-        href={`https://wa.me/13323234305?text=${whatsappMessage}`}
+        href={`https://wa.me/13323230435?text=${whatsappMessage}`}
         target="_blank"
         rel="noreferrer"
         aria-label="Chat with Beit Lechem Tech on WhatsApp"
